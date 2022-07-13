@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
 import React, {useState} from 'react'
 import Alert from './Components/Alert';
+import { BrowserRouter } from 'react-router-dom'
 
 
 
@@ -51,13 +52,13 @@ const showAlert = (message, type) => {
 
   return (
     <>
-    {/* <Router> */}
-  <Navbar mode={mode} toggleMode={toggleMode}/>
-  <Alert alert={alert}/>
- <div className="container my-3">
- {/* <Switch> */}
- {/* <Route path="/"> */}
-          <TextForm heading="Enter your Text to Analyze:" showAlert={showAlert}/>
+     <BrowserRouter>
+        <Navbar mode={mode} toggleMode={toggleMode}/>
+        <Alert alert={alert}/>
+          <div className="container my-3">
+          {/* <Switch> */}
+          {/* <Route path="/"> */}
+            <TextForm heading="Enter your Text to Analyze:" showAlert={showAlert}/>
           </div>
           {/* </Route>
           <Route path="about/*">
@@ -65,12 +66,8 @@ const showAlert = (message, type) => {
           </Route> */}
           
         {/* </Switch> */}
-
- 
-
-{/* </Router> */}
-
-  </>
+    </BrowserRouter>
+    </>
 
   );
 }
